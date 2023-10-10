@@ -1,0 +1,101 @@
+import org.drools.core.process.core.datatype.impl.type.StringDataType;
+import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
+
+[
+  [
+    "name" : "Email",
+    "parameters" : [
+      "From" : new StringDataType(),
+      "To" : new StringDataType(),
+      "Subject" : new StringDataType(),
+      "Body" : new StringDataType()
+    ],
+    "displayName" : "Email",
+    "icon" : "defaultemailicon.gif"
+  ],
+
+  [
+    "name" : "Log",
+    "parameters" : [
+      "Message" : new StringDataType()
+    ],
+    "displayName" : "Log",
+    "icon" : "defaultlogicon.gif"
+  ],
+
+  [
+    "name" : "WebService",
+    "parameters" : [
+        "Url" : new StringDataType(),
+         "Namespace" : new StringDataType(),
+         "Interface" : new StringDataType(),
+         "Operation" : new StringDataType(),
+         "Parameter" : new StringDataType(),
+         "Endpoint" : new StringDataType(),
+         "Mode" : new StringDataType()
+    ],
+    "results" : [
+        "Result" : new ObjectDataType(),
+    ],
+    "displayName" : "WS",
+    "icon" : "defaultservicenodeicon.png"
+  ],
+
+  [
+    "name" : "Rest",
+    "parameters" : [
+        "Url" : new StringDataType(),
+        "Method" : new StringDataType(),
+        "ConnectTimeout" : new StringDataType(),
+        "ReadTimeout" : new StringDataType(),
+        "Username" : new StringDataType(),
+        "Password" : new StringDataType()
+    ],
+    "results" : [
+        "Result" : new ObjectDataType(),
+    ],
+    "displayName" : "REST",
+    "icon" : "defaultservicenodeicon.png"
+  ],
+  [
+    "name" : "getDescriptionContractBSCS",
+    "displayName" : "getDescriptionContractBSCS",
+    "defaultHandler" : "mvel: new getDescContractBSCS.getDescContractBSCSContractWorkItemHandler()",
+    "mavenDependencies" : [
+          "com.billcom.ManageLteSMSWorkItemHandlers:ManageLteWorkItemHandlers:1.0"
+     ]
+  ],
+    [
+    "name" : "StartContractLte",
+    "displayName" : "StartContractLte",
+    "defaultHandler" : "mvel: new startcontractLte.StartContractLteWorkItemHandler()",
+    "mavenDependencies" : [
+          "com.billcom.ManageLteWorkItemHandlers:ManageLteWorkItemHandlers:1.0"
+     ]
+  ],
+   [
+    "name" : "StartTickler",
+    "displayName" : "StartTickler",
+    "defaultHandler" : "mvel: new starttickler.StartTicklerWorkItemHandler()",
+    "mavenDependencies" : [
+          "com.billcom.ManageLteWorkItemHandlers:ManageLteWorkItemHandlers:1.0"
+     ]
+  ],
+    [
+    "name" : "DesacContractLte",
+    "displayName" : "DesacContractLte",
+    "defaultHandler" : "mvel: new desaccontractlte.DesacContractLteWorkItemHandler()",
+    "mavenDependencies" : [
+          "com.billcom.ManageLteWorkItemHandlers:ManageLteWorkItemHandlers:1.0"
+     ]
+  ],
+    [
+    "name" : "HasPending",
+    "displayName" : "HasPending",
+    "defaultHandler" : "mvel: new haspending.HasPendingWorkItemHandler()",
+    "mavenDependencies" : [
+          "com.billcom.ManageLteWorkItemHandlers:ManageLteWorkItemHandlers:1.0"
+     ]
+  ]
+
+]
